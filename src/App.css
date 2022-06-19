@@ -1,38 +1,57 @@
 .App {
   text-align: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* underline on hover animation */
+a,
+.homepage-link {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a:after,
+.homepage-link:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background-color: #f5c6aa;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a:hover:after,
+.homepage-link:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
-.App-link {
-  color: #61dafb;
+.page {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  overflow-y: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.page:not(#homepage) {
+  margin-top: 80px;
+  height: calc(100% - 80px);
+}
+
+.page:not(#about-me) {
+  padding: 30px 60px;
+}
+
+@media only screen and (max-width: 710px) {
+  .page:not(#about-me) {
+    padding: 10px 4px;
   }
 }

@@ -1,0 +1,23 @@
+#gallery-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery-asset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  flex: 1 1 300px;
+  width: 100%;
+}
+
+.gallery-asset img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery-asset-size {
+  margin-top: 2px;
+  color: #808080;
+}

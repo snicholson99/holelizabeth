@@ -1,0 +1,42 @@
+#get-in-touch-form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+  flex: 1 1 50%;
+}
+
+#get-in-touch form {
+  display: flex;
+  flex-direction: column;
+}
+
+#get-in-touch > label {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 0;
+}
+
+#contact-button {
+  margin: 20px 0;
+  text-transform: uppercase;
+  background-color: rgb(226, 227, 229);
+  font-size: 1.2rem;
+  width: 140px;
+  height: 40px;
+  border: 1px solid rgb(195, 195, 195);
+  cursor: pointer;
+}
+
+#contact-button:hover {
+  background-color: rgb(216, 216, 216);
+}
+
+@media screen and (max-width: 920px) {
+  #get-in-touch-form-container {
+    order: 1;
+  }
+
+  #contact-button {
+    align-self: center;
+  }
+}

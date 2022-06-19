@@ -1,0 +1,16 @@
+#homepage {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#homepage-links {
+  display: flex;
+}
+
+.homepage-link {
+  margin: 20px;
+  cursor: pointer;
+}

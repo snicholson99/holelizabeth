@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, useLocation } from "react-router-dom";
+import "./App.css";
+import { Leaves } from "./components/Leaves";
+import { Homepage } from "./pages/Homepage";
+import { AboutMe } from "./pages/AboutMe";
+import { Gallery } from "./pages/Gallery";
+import { Header } from "./components/Header";
+// import { GetInTouch } from "./pages/GetInTouch";
 
-function App() {
+const App = () => {
+  const location = useLocation();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {location.pathname !== "/" && <Header />}
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/about-me" element={<AboutMe />} />
+        <Route path="/gallery" element={<Gallery />} />
+        {/* <Route path="/get-in-touch" element={<GetInTouch />} /> */}
+      </Routes>
+      {location.pathname === "/" && <Leaves />}
     </div>
   );
-}
+};
 
 export default App;
