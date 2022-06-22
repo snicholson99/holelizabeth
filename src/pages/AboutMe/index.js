@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./style.css";
 
 export const AboutMe = () => {
-  const [textData, setTextData] = useState(null);
+  const [pageData, setPageData] = useState(null);
 
   useEffect(() => {
     fetch(
@@ -12,9 +12,12 @@ export const AboutMe = () => {
       .then((data) => {
         let newData = {};
         data.records.forEach((record) => {
-          Object.assign(newData, { [record.fields.Key]: record.fields.Text });
+          Object.assign(newData, {
+            [record.fields.Key]:
+              record.fields.Text || record.fields.Image[0].url,
+          });
         });
-        setTextData(newData);
+        setPageData(newData);
       })
       .catch((err) => {
         console.error("airtable fetch failed: ", err);
@@ -23,17 +26,19 @@ export const AboutMe = () => {
 
   return (
     <div id="about-me" className="page">
-      <img src="assets/about-me/pencils.jpg" id="about-me-image" alt="" />
+      {pageData?.image && (
+        <img src={pageData.image} id="about-me-image" alt="" />
+      )}
       <div id="about-me-content">
-        {textData?.title && <h1>{textData.title}</h1>}
-        {textData?.subheading && (
-          <p id="about-me-subheading">{textData.subheading}</p>
+        {pageData?.title && <h1>{pageData.title}</h1>}
+        {pageData?.subheading && (
+          <p id="about-me-subheading">{pageData.subheading}</p>
         )}
-        {textData?.paragraph1 && (
-          <p className="about-me-body">{textData.paragraph1}</p>
+        {pageData?.paragraph1 && (
+          <p className="about-me-body">{pageData.paragraph1}</p>
         )}
-        {textData?.paragraph2 && (
-          <p className="about-me-body">{textData.paragraph2}</p>
+        {pageData?.paragraph2 && (
+          <p className="about-me-body">{pageData.paragraph2}</p>
         )}
       </div>
     </div>
