@@ -38,6 +38,7 @@
 #header-mobile-links {
   display: none;
   cursor: pointer;
+  margin: 20px;
 }
 
 @media only screen and (max-width: 710px) {
