@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/holelizabeth/static/css/main.c83192a5.css",
+    "main.css": "/holelizabeth/static/css/main.32f0804c.css",
     "main.js": "/holelizabeth/static/js/main.c6aa4838.js",
     "index.html": "/holelizabeth/index.html",
-    "main.c83192a5.css.map": "/holelizabeth/static/css/main.c83192a5.css.map",
+    "main.32f0804c.css.map": "/holelizabeth/static/css/main.32f0804c.css.map",
     "main.c6aa4838.js.map": "/holelizabeth/static/js/main.c6aa4838.js.map"
   },
   "entrypoints": [
-    "static/css/main.c83192a5.css",
+    "static/css/main.32f0804c.css",
     "static/js/main.c6aa4838.js"
   ]
 }
