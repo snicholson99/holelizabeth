@@ -39,6 +39,7 @@ a:hover:after,
   width: 100%;
   z-index: 0;
   overflow-y: auto;
+  position: absolute;
 }
 
 .page:not(#homepage) {

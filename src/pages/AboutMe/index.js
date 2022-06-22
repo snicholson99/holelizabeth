@@ -32,7 +32,7 @@ export const AboutMe = () => {
         {textData?.paragraph1 && (
           <p className="about-me-body">{textData.paragraph1}</p>
         )}
-        {textData?.paragraph1 && (
+        {textData?.paragraph2 && (
           <p className="about-me-body">{textData.paragraph2}</p>
         )}
       </div>

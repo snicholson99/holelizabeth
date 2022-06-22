@@ -3,6 +3,7 @@
   top: -50px;
   width: 100%;
   text-align: right;
+  z-index: -1;
 }
 
 #leaves i {
@@ -212,3 +213,9 @@
     opacity: 0;
   }
 } */
+
+@media only screen and (max-width: 710px) {
+  #leaves {
+    right: -50vw;
+  }
+}

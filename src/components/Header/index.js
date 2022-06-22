@@ -1,26 +1,54 @@
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./style.css";
 
 export const Header = () => {
   const location = useLocation();
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+
+  const toggleHamburger = () => {
+    setIsHamburgerOpen(!isHamburgerOpen);
+  };
+
+  const onLinkClick = () => {
+    if (window.innerWidth <= 710) {
+      setIsHamburgerOpen(false);
+    }
+  };
+
   return (
-    <header id="header">
-      <Link to="/" className="header-link">
+    <header
+      id="header"
+      className={`${isHamburgerOpen ? "hamburger-open" : ""}`}
+    >
+      <Link to="/holelizabeth" className="header-link" onClick={onLinkClick}>
         <h1>holelizabeth</h1>
       </Link>
+      <div id="header-mobile-links">
+        <i
+          onClick={toggleHamburger}
+          className={`fas fa-bars ${isHamburgerOpen ? "hide" : ""}`}
+        ></i>
+        <i
+          onClick={toggleHamburger}
+          className={`fas fa-x ${!isHamburgerOpen ? "hide" : ""}`}
+        ></i>
+      </div>
       <div id="header-links">
         <Link
-          to="/about-me"
+          onClick={onLinkClick}
+          to="/holelizabeth/about-me"
           className={`header-link ${
-            location.pathname === "/about-me" ? "selected" : ""
+            location.pathname === "/holelizabeth/about-me" ? "selected" : ""
           }`}
         >
           about me
         </Link>
         <Link
-          to="/gallery"
+          onClick={onLinkClick}
+          to="/holelizabeth/gallery"
           className={`header-link ${
-            location.pathname === "/gallery" ? "selected" : ""
+            location.pathname === "/holelizabeth/gallery" ? "selected" : ""
           }`}
         >
           gallery

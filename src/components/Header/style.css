@@ -1,3 +1,7 @@
+.hide {
+  display: none;
+}
+
 #header {
   position: fixed;
   width: 100%;
@@ -8,6 +12,7 @@
   height: 80px;
   box-shadow: 0px 0px 4px grey;
   padding: 20px;
+  background-color: #fdf6f0;
 }
 
 #header h1 {
@@ -28,4 +33,35 @@
   background-color: #fcd8d4;
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+#header-mobile-links {
+  display: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 710px) {
+  #header h1,
+  #header-mobile-links {
+    font-size: 25px;
+  }
+  #header-mobile-links {
+    display: inline;
+  }
+  #header-links {
+    display: none;
+  }
+  #header.hamburger-open #header-links {
+    display: inline;
+  }
+  #header-links {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0px 2px 2px grey;
+    z-index: 999;
+    background-color: #fdf6f0;
+    justify-content: center;
+  }
 }

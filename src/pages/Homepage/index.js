@@ -6,10 +6,10 @@ export const Homepage = () => {
     <div id="homepage" className="page">
       <h1>holelizabeth</h1>
       <div id="homepage-links">
-        <Link to="/about-me" className="homepage-link">
+        <Link to="/holelizabeth/about-me" className="homepage-link">
           about me
         </Link>
-        <Link to="/gallery" className="homepage-link">
+        <Link to="/holelizabeth/gallery" className="homepage-link">
           gallery
         </Link>
         {/* <Link to="/get-in-touch" className="homepage-link">
