@@ -3,6 +3,7 @@
   height: 100vh;
   position: relative;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* underline on hover animation */
