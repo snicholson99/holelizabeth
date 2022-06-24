@@ -10,18 +10,21 @@
 #about-me-content {
   flex: 0 0 60%;
   padding: 20px;
+  text-align: left;
+}
+
+#about-me h1 {
+  margin-top: 20px;
 }
 
 #about-me h1,
-#about-me-subheading {
-  text-align: center;
+#about-me-subheading,
+.about-me-body {
   margin: 40px;
 }
 
 .about-me-body {
   line-height: 2;
-  margin: 40px;
-  text-align: left;
 }
 
 @media only screen and (max-width: 710px) {
@@ -30,7 +33,7 @@
   }
 
   #about-me-image {
-    max-height: calc(100vh - 80px);
+    max-height: calc(60vh - 80px);
     max-width: 100%;
   }
 

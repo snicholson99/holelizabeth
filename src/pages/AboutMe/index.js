@@ -26,9 +26,6 @@ export const AboutMe = () => {
 
   return (
     <div id="about-me" className="page">
-      {pageData?.image && (
-        <img src={pageData.image} id="about-me-image" alt="" />
-      )}
       <div id="about-me-content">
         {pageData?.title && <h1>{pageData.title}</h1>}
         {pageData?.subheading && (
@@ -41,6 +38,9 @@ export const AboutMe = () => {
           <p className="about-me-body">{pageData.paragraph2}</p>
         )}
       </div>
+      {pageData?.image && (
+        <img src={pageData.image} id="about-me-image" alt="" />
+      )}
     </div>
   );
 };
