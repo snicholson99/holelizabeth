@@ -1,0 +1,29 @@
+#gallery-items-inner-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-template-rows: repeat(auto-fill, 200px);
+  justify-content: center;
+}
+
+.gallery-item {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  padding: 1px;
+}
+
+.gallery-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  filter: brightness(1.05);
+}
+
+#empty-gallery-items-text {
+  text-align: center;
+}

@@ -4,6 +4,7 @@
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
+  font-family: "Raleway", sans-serif;
 }
 
 /* underline on hover animation */
@@ -15,7 +16,7 @@ a,
   color: inherit;
 }
 
-a:after,
+a:not(.gallery-event-item):after,
 .homepage-link:after {
   content: "";
   position: absolute;
@@ -24,7 +25,8 @@ a:after,
   height: 2px;
   bottom: -6px;
   left: 0;
-  background-color: #f5c6aa;
+  /* background-color: #e9e1da; */
+  background-color: #fcd8d4;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -41,7 +43,7 @@ a:hover:after,
   z-index: 0;
 }
 
-.page:not(#homepage) {
+.page {
   margin-top: 80px;
   min-height: calc(100% - 80px);
 }

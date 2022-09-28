@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { LoadingSpinner } from "../../components/LoadingSpinner";
 import "./style.css";
 
 export const Gallery = () => {
-  const [galleryData, setGalleryData] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [categories, setCategories] = useState([]);
   useEffect(() => {
+    setIsLoading(true);
     fetch(
-      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_KEY}/gallery?api_key=${process.env.REACT_APP_AIRTABLE_API_KEY}`
+      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_KEY}/Categories?api_key=${process.env.REACT_APP_AIRTABLE_API_KEY}`
     )
       .then((resp) => resp.json())
-      .then((data) => {
-        setGalleryData(data.records.reverse());
-      })
+      .then((data) => setCategories(data.records))
+      .then(() => setIsLoading(false))
       .catch((err) => {
         console.error("airtable fetch failed: ", err);
       });
@@ -19,24 +21,32 @@ export const Gallery = () => {
 
   return (
     <div id="gallery" className="page">
-      <div id="gallery-content">
-        {galleryData.map((asset) => {
-          if (asset.fields.Name && asset.fields?.Image) {
-            return (
-              <div key={asset.id} className="gallery-asset">
-                <img
-                  src={asset.fields?.Image[0]?.url}
-                  alt={asset.fields.Name}
-                />
-                <p className="gallery-asset-name">{asset.fields.Name}</p>
-                <p className="gallery-asset-size">{asset.fields.Subtext}</p>
-              </div>
-            );
-          } else {
-            return null;
-          }
-        })}
-      </div>
+      {isLoading && !categories.length && <LoadingSpinner />}
+      {categories.map((event, index) => {
+        if (
+          event.fields.Active &&
+          event.fields?.["Cover Image"] &&
+          event.fields.Name
+        ) {
+          return (
+            <Link
+              to={`/holelizabeth/gallery/${event.fields.Name.toLowerCase()}`}
+              key={event.id}
+              className="gallery-event-item"
+              data-event={event.fields.Name}
+              style={{ zIndex: index + 2 }}
+            >
+              <img
+                src={event.fields["Cover Image"][0].url}
+                alt={event.fields.Name}
+              />
+              <p>{event.fields.Name}</p>
+            </Link>
+          );
+        } else {
+          return null;
+        }
+      })}
     </div>
   );
 };

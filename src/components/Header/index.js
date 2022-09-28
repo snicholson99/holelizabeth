@@ -22,7 +22,7 @@ export const Header = () => {
       className={`${isHamburgerOpen ? "hamburger-open" : ""}`}
     >
       <Link to="/holelizabeth" className="header-link" onClick={onLinkClick}>
-        <h1>holelizabeth</h1>
+        <h1>Hol Elizabeth</h1>
       </Link>
       <div id="header-mobile-links">
         <i
@@ -42,7 +42,7 @@ export const Header = () => {
             location.pathname === "/holelizabeth/about-me" ? "selected" : ""
           }`}
         >
-          about me
+          About Me
         </Link>
         <Link
           onClick={onLinkClick}
@@ -51,7 +51,7 @@ export const Header = () => {
             location.pathname === "/holelizabeth/gallery" ? "selected" : ""
           }`}
         >
-          gallery
+          Gallery
         </Link>
         {/* <Link
           to="/get-in-touch"

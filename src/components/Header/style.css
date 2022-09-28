@@ -8,11 +8,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
+  z-index: 10;
   height: 80px;
   box-shadow: 0px 0px 4px grey;
   padding: 20px;
   background-color: #fdf6f0;
+  /* background-color: #aec5da; */
+  /* background-color: #c2acb4; */
 }
 
 #header h1 {
@@ -30,6 +32,7 @@
 }
 
 .header-link.selected:after {
+  /* background-color: #e9e1da; */
   background-color: #fcd8d4;
   transform: scaleX(1);
   transform-origin: bottom left;
