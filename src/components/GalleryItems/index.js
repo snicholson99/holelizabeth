@@ -11,7 +11,6 @@ export const GalleryItems = () => {
   const [selectedAssetName, setSelectedAssetName] = useState(null);
   const [galleryData, setGalleryData] = useState([]);
   let { categoryId } = useParams();
-  //   console.log(process.env);
   useEffect(() => {
     setIsLoading(true);
     fetch(

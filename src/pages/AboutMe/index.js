@@ -29,8 +29,6 @@ export const AboutMe = () => {
       });
   }, []);
 
-  console.log(pageData);
-
   return (
     <div id="about-me" className="page">
       {isLoading && !pageData && <LoadingSpinner />}
