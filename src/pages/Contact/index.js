@@ -1,16 +1,11 @@
 import "./style.css";
 
-export const GetInTouch = () => {
+export const Contact = () => {
   return (
     <div id="get-in-touch" className="page">
       <p>Want something commissioned? Just drop me a request below!</p>
       <div id="get-in-touch-form-container">
-        <form
-          id="contact-form"
-          action="mailto:test@test.co.uk"
-          method="post"
-          enctype="text/plain"
-        >
+        <form id="contact-form">
           <label>
             Full Name:
             <input name="Full Name" />
@@ -23,7 +18,7 @@ export const GetInTouch = () => {
             Message:
             <textarea name="Message"></textarea>
           </label>
-          <input type="submit" value="send" id="contact-button" />
+          <input type="submit" id="contact-button" />
         </form>
       </div>
     </div>

@@ -54,12 +54,12 @@ export const Header = () => {
           Gallery
         </Link>
         {/* <Link
-          to="/get-in-touch"
+          to="/holelizabeth/contact"
           className={`header-link ${
-            location.pathname === "/get-in-touch" ? "selected" : ""
+            location.pathname === "/holelizabeth/contact" ? "selected" : ""
           }`}
         >
-          get in touch
+          Contact
         </Link> */}
       </div>
     </header>
